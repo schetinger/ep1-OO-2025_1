@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Scanner;
 public class EditarA {
 
-    private static final String arquivo = "dadoalunos.csv";
+    private static final String arquivo = "bancodados.csv";
 
     public static void pesquisar (ArrayList lista, String pesquisaA, String linha){
 

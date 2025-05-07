@@ -2,7 +2,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.BufferedWriter;
 public class GravarAluno {
-    private static final String arquivo = "dadoalunos.csv";
+    private static final String arquivo = "bancodados.csv";
     public static void addaluno(){
         try(BufferedWriter escrever = new BufferedWriter(new FileWriter(arquivo,true))){
             escrever.write(Aluno.dados()+ "\n");

@@ -2,7 +2,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 public class LerAluno {
-    private static final String arquivo = "dadoalunos.csv";
+    private static final String arquivo = "bancodados.csv";
 
     public static void listarAlunos(){
         try(BufferedReader leitor = new BufferedReader(new FileReader(arquivo))){

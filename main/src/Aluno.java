@@ -32,15 +32,15 @@ public class Aluno {
             GravarAluno.addaluno();
             break;
         case 1:
-        
+        EditarA.editar();
             break;
         case 2:
         LerAluno.listarAlunos();
     
         default:
             break;
-    }
+        }
 
-}
     }
+}
 
