@@ -3,6 +3,7 @@ import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -11,64 +12,81 @@ public class EditarA {
 
     private static final String arquivo = "bancodados.csv";
 
-    public static void pesquisar (ArrayList lista, String pesquisaA, String linha){
-
+    public static void pesquisar (String pesquisaA,ArrayList<String> dados){
+        String linha;
         try(BufferedReader leitor = new BufferedReader(new FileReader(arquivo))){
-            while((linha = leitor.readLine())!= null){
-
-                if(linha.contains(pesquisaA)){
-                    lista.add(linha);
+          while ((linha=leitor.readLine())!= null) {
+            if(linha.contains(pesquisaA)){
+                dados.add(linha);
             }
-        
-         }
-         if(lista.size()==0){
-            linha = String.join(",",lista);
-         }
+            
+          }
     }catch(IOException e){
             System.out.println("Erro ao listar os alunos tente novamente.");}
+   
     }
 
 
     public static void editar(){
         ArrayList<String> lista = new ArrayList<>();
-        System.out.println("Insira Nome, Matricula ou curso:");
-        Scanner sc = new Scanner(System.in); 
-        String linha= "";   
-        String pesquisaA = sc.nextLine();
+        int i=0;
+        while(i==0){
+    System.out.println("Insira Nome, Matricula ou curso:");
+            Scanner sc = new Scanner(System.in);   
+            String pesquisaA = sc.nextLine();
 
-        EditarA.pesquisar(lista,pesquisaA,linha);
-        if(lista.size()==1){
-            System.out.println(linha);
-            editor(linha);
+            EditarA.pesquisar(pesquisaA,lista);
+        if(lista.size()==0){
+            System.out.println("nenhum resoltado de pesquisa tente novamente ");}else{
+                if(lista.size()==1){
+            System.out.println("Deseja alterar os dados desse aluno?");
+            System.out.println(lista);
+            System.out.println("-0- Não, desejo pesquisar outro aluno\n-1- Sim, desejo alterar esse aluno");
+            i=sc.nextInt();
+                if(i==0){
+                    lista.clear();
+                    }else{
+
+                        editor(lista);
+                        i=1;
+    }
         }else{
             for(String dados : lista){
                 System.out.println(dados);
             }
             System.out.println("qual desses nomes deseja editar? responda com o numero de matricula.");
-        pesquisaA = sc.nextLine();
-        EditarA.pesquisar(lista,pesquisaA,linha);
-        editor(linha);
+                pesquisaA = sc.nextLine();
+                EditarA.pesquisar(pesquisaA,lista);
+                    editor(lista);
+                    i=1;
+            }
         }
+    }   
+}
+        
             
 
        
 
-    }
-    public static void editor (String info){
+
+    public static void editor (ArrayList<String> lista){
         System.out.println(("oque deseja alterar?\n"+
                             "\n-0- Nome"+
                             "\n-1- Matrícula "+
                             "\n-2- Curso"));
     Scanner sc = new Scanner(System.in); 
     int op = sc.nextInt();
-        String[] dados = info.split(",");
-
+    sc.nextLine();
+    List<String> linhasED = new ArrayList<>();
+        String info = lista.get(0);
+        String[] mat = info.split(",");
+        System.out.println(mat[1]);
         switch (op) {
             case 0:
                 System.out.println("qual o nome novo?");
                 String n;
                 n = sc.nextLine();
-                 List<String> linhasED = new ArrayList<>();
+                
 
         try (BufferedReader leitor = new BufferedReader(new FileReader(arquivo))) {
             String linha;
@@ -77,7 +95,7 @@ public class EditarA {
                     String nome = partes[0];
                     String matricula = partes[1];
                     String curso = partes [2];
-                        if (nome.equalsIgnoreCase(dados[0])){
+                        if (mat[1].equals(matricula)){
                             nome = n;
                              linhasED.add(nome+","+matricula+","+curso);
                         }else{
@@ -93,8 +111,69 @@ public class EditarA {
             }
         } catch (IOException e) {
             e.printStackTrace();
-        }break;
-            
+        }
+        System.out.println("nome alterado com sucesso");
+        break;
+        case 1:
+        System.out.println("Qual a nova matrícula?");
+        n = sc.nextLine();
+
+try (BufferedReader leitor = new BufferedReader(new FileReader(arquivo))) {
+    String linha;
+        while ((linha = leitor.readLine())!= null ) {
+            String[] partes = linha.split(",");
+            String nome = partes[0];
+            String matricula = partes[1];
+            String curso = partes [2];
+                if (mat[1].equals(matricula)){
+                    matricula = n;
+                     linhasED.add(nome+","+matricula+","+curso);
+                }else{
+
+                    linhasED.add(linha);
+            }}}catch (IOException e) {
+                e.printStackTrace();
+            }
+             try (BufferedWriter escritor = new BufferedWriter(new FileWriter(arquivo))) {
+    for (String linha : linhasED) {
+        escritor.write(linha);
+        escritor.newLine();
+    }
+} catch (IOException e) {
+    e.printStackTrace();
+}  System.out.println("matricula alterado com sucesso");
+
+break;
+    case 2:
+    System.out.println("Qual a nova matrícula?");
+    n = sc.nextLine();
+
+try (BufferedReader leitor = new BufferedReader(new FileReader(arquivo))) {
+String linha;
+    while ((linha = leitor.readLine())!= null ) {
+        String[] partes = linha.split(",");
+        String nome = partes[0];
+        String matricula = partes[1];
+        String curso = partes [2];
+            if (mat[1].equals(matricula)){
+                curso = n;
+                 linhasED.add(nome+","+matricula+","+curso);
+            }else{
+
+                linhasED.add(linha);
+        }}}catch (IOException e) {
+            e.printStackTrace();
+        }
+         try (BufferedWriter escritor = new BufferedWriter(new FileWriter(arquivo))) {
+for (String linha : linhasED) {
+    escritor.write(linha);
+    escritor.newLine();
+}
+} catch (IOException e) {
+e.printStackTrace();
+    System.out.println("Curso alterado com sucesso.");
+}   break;
+
                 default:
                 System.out.println("lalala");
                 break;
@@ -103,7 +182,7 @@ public class EditarA {
             
             
             
-        }
+        
        
        
        
@@ -112,7 +191,7 @@ public class EditarA {
     
     
     
-}
+}}
 
 
 
