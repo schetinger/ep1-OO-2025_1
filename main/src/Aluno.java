@@ -1,6 +1,5 @@
 import java.util.Scanner;
-import java.io.FileWriter;
-import java.io.IOException;
+
 
 public class Aluno {
     private String nome,curso;
@@ -10,12 +9,7 @@ public class Aluno {
  //       this.curso = curso;
  //       this.matricula = matricula;
 // }
-    public static String dados(){
-        System.out.println("insira os dados do aluno no formato:nome,matricula,curso");
-        Scanner sc = new Scanner(System.in);
-        String dados = sc.nextLine();
-        return dados;
-    }
+
     public static void aop(int opcao){
         System.out.println("-Modo Aluno- escolha a função:\n"+
         "-0- Cadastrar alunos \n"+

@@ -3,9 +3,7 @@ import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 public class EditarA {
@@ -61,7 +59,9 @@ public class EditarA {
                     i=1;
             }
         }
+
     }   
+   
 }
         
             
@@ -190,8 +190,9 @@ e.printStackTrace();
      }
     
     
-    
-}}
+    sc.close();
+    }
+}
 
 
 
