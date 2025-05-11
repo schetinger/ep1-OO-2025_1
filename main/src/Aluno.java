@@ -11,15 +11,14 @@ public class Aluno {
 // }
 
     public static void aop(int opcao){
-        System.out.println("-Modo Aluno- escolha a função:\n"+
+       Scanner sc = new Scanner(System.in);
+        do{ System.out.println("=======Modo Aluno=======\n escolha a função:\n"+
         "-0- Cadastrar alunos \n"+
         "-1- Editar alunos \n"+
         "-2- Listar alunos cadastrados \n"+
         "-3- Matricular Aluno \n"+
         "-4- Trancar disciplinas e semestre\n"+
-        "-5- Salvar e carregar dados \n"+
-        "-6- Verificar duplicidade de matricula\n");
-        Scanner sc = new Scanner(System.in);
+        "-5- Voltar para o menu principal \n");
          opcao = sc.nextInt();
     switch (opcao) {
         case 0:
@@ -30,11 +29,14 @@ public class Aluno {
             break;
         case 2:
         LerAluno.listarAlunos();
-    
+            break;
+        case 5:
+        return;
         default:
+        System.out.println("Opção inválida");
             break;
         }
 
-    }
+    }while (true); 
 }
-
+}

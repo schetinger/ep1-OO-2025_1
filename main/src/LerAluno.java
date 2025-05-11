@@ -10,7 +10,7 @@ public class LerAluno {
             while((linha = leitor.readLine())!= null){
                 String[] partes = linha.split(",");
             if(partes.length==3){
-                System.out.println("Nome:"+ partes[0] + ". Matrícula:"+ partes[1]+ ". Curso:"+ partes[2]);
+                System.out.println("\nNome:"+ partes[0] + ". Matrícula:"+ partes[1]+ ". Curso:"+ partes[2]+".");
             }
             
             }

@@ -35,13 +35,16 @@ public class EditarA {
 
             EditarA.pesquisar(pesquisaA,lista);
         if(lista.size()==0){
-            System.out.println("nenhum resoltado de pesquisa tente novamente ");}else{
+            System.out.println("nenhum resultado de pesquisa tente novamente ");}else{
                 if(lista.size()==1){
             System.out.println("Deseja alterar os dados desse aluno?");
             System.out.println(lista);
-            System.out.println("-0- Não, desejo pesquisar outro aluno\n-1- Sim, desejo alterar esse aluno");
+            System.out.println("-0- Não, desejo pesquisar outro aluno\n-1- Sim, desejo alterar esse aluno\n-2- Cancelar busca e voltar pro modo aluno");
             i=sc.nextInt();
-                if(i==0){
+           if(i==2){
+            return;
+           }     
+            if(i==0){
                     lista.clear();
                     }else{
 
@@ -145,7 +148,7 @@ try (BufferedReader leitor = new BufferedReader(new FileReader(arquivo))) {
 
 break;
     case 2:
-    System.out.println("Qual a nova matrícula?");
+    System.out.println("Qual o novo curso?");
     n = sc.nextLine();
 
 try (BufferedReader leitor = new BufferedReader(new FileReader(arquivo))) {
