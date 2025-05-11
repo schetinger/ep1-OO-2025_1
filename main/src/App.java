@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class App {
-    
+
     public static void main(String[] args) throws Exception {
         int opcao=0;
         do{
@@ -16,6 +16,7 @@ public class App {
         Disciplina.dop();
         break;
         case(2):
+        Avaliacao.aop();
         break;
         case(3):
         System.out.println("Muito obrigado por usar o app.");
