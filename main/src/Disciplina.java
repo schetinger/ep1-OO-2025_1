@@ -18,16 +18,21 @@ System.out.println("=======Bem vindo ao Modo Disciplinas=======\n"+"Escolha uma 
         switch (opcao) {
             case 0:
                 GravarD.gravar();
-                break;
-            
+            break;
+            case 1:
+            GravadT.gravar();
+            case 3:
+            LerDisciplinas.listarD();
+            break;
             case 4:
-             l=false;
+
+            break;
 
             default:
                 break;
 
        }
         
-        }while(l==true);
+        }while(opcao!=4);
     }
 }
