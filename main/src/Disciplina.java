@@ -2,7 +2,43 @@ import java.util.Scanner;
 
 public class Disciplina {
     private String nome,codigo,prereq;
-    private int carga;
+    private int credito;
+
+ public int getCredito(){
+    return credito;
+ }
+ public String getNome(){
+    return nome;
+}
+ public String getcodigo(){
+    return codigo;
+}
+ public String getprereq(){
+    return prereq;
+}
+public void setNome(String nome){
+    this.nome = nome;
+}
+public void setCodigo(String codigo){
+    this.codigo = codigo;
+}
+public void setPrereq(String prereq){
+    this.prereq=prereq;
+}
+public void setCredito(int credito){
+    this.credito=credito;
+}
+@Override
+public String toString(){
+    return nome+","+codigo+","+credito+","+prereq;
+}
+public void fromString(String dados){
+    String[] partes= dados.split(",");
+    this.nome=partes[0];
+    this.codigo=partes[1];
+    this.credito=Integer.parseInt(partes[2]);
+    this.prereq=partes[3];
+}
     public static void dop (){
         Scanner sc = new Scanner(System.in);
         Boolean l= true;
@@ -21,6 +57,7 @@ System.out.println("=======Bem vindo ao Modo Disciplinas=======\n"+"Escolha uma 
             break;
             case 1:
             GravadT.gravar();
+            break;
             case 3:
             LerDisciplinas.listarD();
             break;

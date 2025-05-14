@@ -7,7 +7,6 @@ public class Aluno {
     private boolean especial;
 
     public int getMatricula(){
-   
     return matricula;
 }
 public String getNome(){
@@ -63,7 +62,6 @@ public void fromString(String linha){
         LerAluno.listarAlunos();
             break;
         case 5:
-        sc.close();
         return;
 
         default:

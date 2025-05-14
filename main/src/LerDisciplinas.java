@@ -2,7 +2,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class LerDisciplinas {
+public class LerDisciplinas extends Disciplina {
 
        private static final String arquivo = "bancodisciplinas.csv";
 
@@ -25,12 +25,13 @@ public class LerDisciplinas {
          
     }
     public static Boolean pesquisa (String codigo){
+        Disciplina disciplina= new Disciplina();
         try(BufferedReader leitor = new BufferedReader(new FileReader(arquivo))){
             String linha;
             while((linha = leitor.readLine())!= null){
-                String[] partes = linha.split(",");
-                if(codigo.equals(partes[1])){
-                    System.out.println("Adicione os dados para criar uma turma de "+partes[0]);
+                disciplina.fromString(linha);
+                if(codigo.equals(disciplina.getcodigo())){
+                    System.out.println("Adicione os dados para criar uma turma de "+disciplina.getNome());
                     return true;
                 }
             }
