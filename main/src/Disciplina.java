@@ -58,6 +58,9 @@ System.out.println("=======Bem vindo ao Modo Disciplinas=======\n"+"Escolha uma 
             case 1:
             GravadT.gravar();
             break;
+            case 2:
+            Turmas.listarT();
+            break;
             case 3:
             LerDisciplinas.listarD();
             break;
