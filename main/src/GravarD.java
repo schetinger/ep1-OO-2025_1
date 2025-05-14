@@ -5,7 +5,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class GravarD {
+public class GravarD extends Disciplina {
      
 private static final String arquivo = "bancodisciplinas.csv";
     public static void gravar(){
