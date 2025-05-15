@@ -21,5 +21,24 @@ public class LerAluno {
             System.out.println("Erro ao listar os alunos tente novamente.");
         }
     }
+    public static Boolean listarAlunos(int matricula){
+        Aluno aluno = new Aluno();
+        try(BufferedReader leitor = new BufferedReader(new FileReader(arquivo))){
+            String linha;
+            while((linha = leitor.readLine())!= null){
+                aluno.fromString(linha);
+            if(aluno.getMatricula()==matricula){
+                return true;
+            }
+            
+            }
+            
+
+        }
+        catch(IOException e){
+            System.out.println("Erro ao listar os alunos tente novamente.");
+        }
+        return false;
+    }
 }
 

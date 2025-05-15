@@ -65,11 +65,11 @@ public class Turmas extends Disciplina{
     this.hora=partes[6];
     this.capacidade=Integer.parseInt(partes[7]);
     }
-    public static void listarT(){
+    public static Boolean listarT(){
         Turmas turma = new Turmas();
         Scanner sc = new Scanner(System.in);
-System.out.println("Insira o código ou o nome da disciplina desejada:");
-        String pesquisa = sc.nextLine();
+                    System.out.println("Insira o código ou o nome da disciplina desejada:");
+                    String pesquisa=sc.nextLine();
         try(BufferedReader leitor = new BufferedReader(new FileReader(arquivo))){
             String linha;
             while((linha = leitor.readLine())!= null){
@@ -83,11 +83,30 @@ System.out.println("Insira o código ou o nome da disciplina desejada:");
                                     " Sala "+turma.getSala()+
                                     " Horario: "+turma.gethora()+
                                     " Capacidade: "+ turma.getCapacidade());
+                return true;
                }
             }
         }
         catch(IOException e){
             System.out.println("Erro ao listar os alunos tente novamente.");
         }
+        return false;
+}
+
+  public static Boolean listarT(String codigo,String hora){
+        Turmas turma = new Turmas();
+        try(BufferedReader leitor = new BufferedReader(new FileReader(arquivo))){
+            String linha;
+            while((linha = leitor.readLine())!= null){
+                turma.fromString(linha);
+               if(turma.getcodigo().contains(codigo) && turma.gethora().contains(hora)){
+                return true;
+               }
+            }
+        }
+        catch(IOException e){
+            System.out.println("Erro ao listar os alunos tente novamente.");
+        }
+        return false;
 }
 }

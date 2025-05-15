@@ -31,7 +31,13 @@ public void setEspecial(boolean especial){
     this.especial=especial;
 }
 public String toString(){
- String resumo = nome+","+matricula+","+curso;
+    String e ;
+    if(especial== true){
+        e="especial";
+    }else{
+        e="normal";
+    }
+ String resumo = nome+","+matricula+","+curso+","+e;
     return resumo;
 }
 public void fromString(String linha){
@@ -61,6 +67,9 @@ public void fromString(String linha){
         case 2:
         LerAluno.listarAlunos();
             break;
+        case 3:
+       MatricularA.matricular();
+        break;
         case 5:
         return;
 

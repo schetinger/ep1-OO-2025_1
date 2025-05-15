@@ -36,7 +36,7 @@ public class GravadT extends Turmas {
         turma.setCapacidade(sc.nextInt());
         System.out.println(turma.toString());
         if(GravadT.conflito(turma.toString())==false){
-    GravadT.escrever(turma.toString());
+    GravadT.escrever(turma.toString(),arquivo);
     return;
   }else{
     System.out.println("Já existe uma disciplina nesse horario:\n"+
@@ -56,7 +56,7 @@ public class GravadT extends Turmas {
 }while(op==0);
 }
 
-public static Boolean conflito(String info){
+public static Boolean conflito( String info){
     Turmas turma = new Turmas();
     turma.fromString(info);
     Turmas teste = new Turmas();
@@ -77,10 +77,10 @@ public static Boolean conflito(String info){
     return false;
 }
 
-public static void escrever(String turma){
+public static void escrever(String turma,String arquivo){
     try(BufferedWriter escrever = new BufferedWriter(new FileWriter(arquivo,true))){
             escrever.write(turma+"\n");
-            System.out.println("Disciplina adicionado ao banco de dados com sucesso");
+            System.out.println("Adicionado ao banco de dados com sucesso");
         }catch (IOException e){
             System.out.println("Algo deu errado, tente novamente");
             }

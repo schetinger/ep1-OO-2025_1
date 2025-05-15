@@ -12,10 +12,11 @@ public class GravarAluno extends Aluno{
         int op =0;
         GravarAluno aluno = new GravarAluno();
     while (op ==0) {
+        op=2;
         aluno.fromString(aluno.dados());
 try (BufferedReader leitor = new BufferedReader(new FileReader(arquivo))) {
             String linha;
-                while ((linha = leitor.readLine())!= null  ) {
+                while ((linha = leitor.readLine())!= null) {
                     String[] partes = linha.split(",");
         if(aluno.getMatricula()==Integer.parseInt(partes[1])){
             System.out.println("Essa matricula ja existe deseja adicionar outra matricula ou sair?\n"+
@@ -27,20 +28,23 @@ try (BufferedReader leitor = new BufferedReader(new FileReader(arquivo))) {
             return;
             }
     }
-}
-op=1;
+} 
+
+
+
 }catch (IOException e) {
         e.printStackTrace();
         }
+
 }
-                try(BufferedWriter escrever = new BufferedWriter(new FileWriter(arquivo,true))){
+                        try(BufferedWriter escrever = new BufferedWriter(new FileWriter(arquivo,true))){
             escrever.write(aluno.toString()+ "\n");
             System.out.println("Aluno adicionado ao banco de dados com sucesso");
             
         }catch (IOException e){
             System.out.println("Algo deu errado, tente novamente");
-            }     
-}
+            }  
+    }
 
 
 public  String dados(){
