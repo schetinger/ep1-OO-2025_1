@@ -41,13 +41,13 @@ O enunciado do trabalho pode ser encontrado aqui:
 ## Prints da Execução
 
 1. Menu Principal:  
-projeto1 oo/ep1-OO-2025_1/print1.png
+(https://github.com/schetinger/ep1-OO-2025_1/blob/main/print1.png)
 
 2. Cadastro de Aluno:  
-projeto1 oo/ep1-OO-2025_1/print2.png
+(https://github.com/schetinger/ep1-OO-2025_1/blob/main/print2.png)
 
 3. Relatório de Frequência/Notas:  
-projeto1 oo/ep1-OO-2025_1/print3.png
+(https://github.com/schetinger/ep1-OO-2025_1/blob/main/print3.png)
 
 ---
 
@@ -55,7 +55,7 @@ projeto1 oo/ep1-OO-2025_1/print3.png
 
 - [x] Cadastro, listagem, matrícula e trancamento de alunos (Normais e Especiais)
 - [x] Cadastro de disciplinas e criação de turmas (presenciais e remotas)
-- [ ] Matrícula de alunos em turmas, respeitando vagas e pré-requisitos
+- [x] Matrícula de alunos em turmas, respeitando vagas e pré-requisitos
 - [ ] Lançamento de notas e controle de presença
 - [ ] Cálculo de média final e verificação de aprovação/reprovação
 - [ ] Relatórios de desempenho acadêmico por aluno, turma e disciplina
