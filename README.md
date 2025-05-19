@@ -41,13 +41,13 @@ O enunciado do trabalho pode ser encontrado aqui:
 ## Prints da Execução
 
 1. Menu Principal:  
-(https://github.com/schetinger/ep1-OO-2025_1/blob/main/print1.png)
+[alt text](https://github.com/schetinger/ep1-OO-2025_1/blob/main/print1.png)
 
 2. Cadastro de Aluno:  
-(https://github.com/schetinger/ep1-OO-2025_1/blob/main/print2.png)
+[alt text](https://github.com/schetinger/ep1-OO-2025_1/blob/main/print2.png)
 
 3. Relatório de Frequência/Notas:  
-(https://github.com/schetinger/ep1-OO-2025_1/blob/main/print3.png)
+[alt text](https://github.com/schetinger/ep1-OO-2025_1/blob/main/print3.png)
 
 ---
 
