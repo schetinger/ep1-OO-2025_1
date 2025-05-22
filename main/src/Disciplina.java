@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Disciplina {
@@ -40,16 +41,19 @@ public void fromString(String dados){
     this.prereq=partes[3];
 }
     public static void dop (){
-        Scanner sc = new Scanner(System.in);
-        Boolean l= true;
+        
         int opcao;
        do{
+        try{
+
+
 System.out.println("=======Bem vindo ao Modo Disciplinas=======\n"+"Escolha uma opção:\n"+
                             "-0- Cadastrar nova disciplina\n"+
                             "-1- Criar turmas de disciplinas existentes\n"+
                             "-2- Listar turmas de uma disciplina\n"+
                             "-3- Listar disciplinas\n"+
                             "-4- Voltar ao menu principal");
+        Scanner sc = new Scanner(System.in);                    
         opcao = sc.nextInt();
         switch (opcao) {
             case 0:
@@ -65,14 +69,16 @@ System.out.println("=======Bem vindo ao Modo Disciplinas=======\n"+"Escolha uma 
             LerDisciplinas.listarD();
             break;
             case 4:
-
-            break;
+            return;
 
             default:
+            System.out.println("\nInsira um número entre as opções");
                 break;
 
        }
-        
-        }while(opcao!=4);
+    }catch(InputMismatchException e ){
+        System.out.println("\nResposta inválida insira novamente");
+    }
+        }while(true);
     }
 }

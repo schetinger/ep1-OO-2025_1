@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 
@@ -48,14 +49,17 @@ public void fromString(String linha){
 }
 
     public static void aop(int opcao){
-       Scanner sc = new Scanner(System.in);
-        do{ System.out.println("=======Modo Aluno=======\n escolha a função:\n"+
+    
+        do{ 
+            try{
+            System.out.println("=======Modo Aluno=======\n escolha a função:\n"+
         "-0- Cadastrar alunos \n"+
         "-1- Editar alunos \n"+
         "-2- Listar alunos cadastrados \n"+
         "-3- Matricular Aluno em disiplina\n"+
         "-4- Trancar disciplinas e semestre\n"+
         "-5- Voltar para o menu principal \n");
+        Scanner sc = new Scanner(System.in);
         opcao = sc.nextInt();
     switch (opcao) {
         case 0:
@@ -74,8 +78,10 @@ public void fromString(String linha){
         return;
 
         default:
-        System.out.println("Opção inválida");
+        System.out.println("Insira um número entre as opções");
             break;
+        }}catch(InputMismatchException e){
+            System.out.println("Resposta inválida insira novamente");
         }
 
     }while (true); 
