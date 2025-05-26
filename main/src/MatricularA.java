@@ -10,7 +10,7 @@ public class MatricularA {
     do{
         System.out.println("Insira a matricula do aluno que deseja matricular na disciplina:");
         aluno.setMatricula(sc.nextInt());
-        if(LerAluno.listarAlunos(aluno.getMatricula())==true){
+        if(LerAluno.listarAlunos(aluno.getMatricula(),aluno)==true){
             System.out.println("Insira codigo,horário:");
             sc.nextLine();
         String[] pesquisa = sc.nextLine().split(",");

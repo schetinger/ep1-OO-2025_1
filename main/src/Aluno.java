@@ -32,20 +32,24 @@ public void setEspecial(boolean especial){
     this.especial=especial;
 }
 public String toString(){
-    String e ;
     if(especial== true){
-        e="especial";
+       return nome+","+matricula+","+curso+","+"especial";
     }else{
-        e="normal";
+       return nome+","+matricula+","+curso+","+"normal";
     }
- String resumo = nome+","+matricula+","+curso+","+e;
-    return resumo;
+
+    
 }
 public void fromString(String linha){
     String[] partes= linha.split(",");
     this.nome = partes[0];
     this.matricula = Integer.parseInt(partes[1]);
     this.curso = partes[2];
+    if(partes[3].equals("normal")){
+    this.especial= false;
+    }else{
+        this.especial=true;
+    }
 }
 
     public static void aop(int opcao){
