@@ -19,10 +19,10 @@ O enunciado do trabalho pode ser encontrado aqui:
 ## Instruções para Compilação e Execução
 
 1. **Compilação:**  
-   Main App.java
+   Dentro do VScode
 
 2. **Execução:**  
-   App.java
+   excecutar o aplicativo pelo VScode com o run.
 
 3. **Estrutura de Pastas:**  
    O trabalho esta separado em classes que vão se especificando para realizar certas funções e todos chamados saem do App.java
@@ -34,7 +34,7 @@ O enunciado do trabalho pode ser encontrado aqui:
 
 ## Vídeo de Demonstração
 
-- [Inserir o link para o vídeo no YouTube/Drive aqui]
+- (https://drive.google.com/file/d/1kAhRcgdK6YsssEQ90Yz1R-Z6PZR1Co59/view?usp=sharing)
 
 ---
 
@@ -67,7 +67,7 @@ O enunciado do trabalho pode ser encontrado aqui:
 
 ## Observações (Extras ou Dificuldades)
 
-Maior dificuldade foi a extensão no trabalho e o tratamento dos dados armazenados em arquivos csv.
+Maior dificuldade foi o tratamento dos dados armazenados em arquivos csv e a implementação dos objetos que fizessem sentido.
 
 ---
 
